@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Бомбин Богдан | Репетитор по физике и математике</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
+
+        :root {
+            --ink: #454545;
+            --muted: #737373;
+            --wine: #8d171c;
+            --gold: #e6d39a;
+            --line: #d7d7d7;
+            --paper: #fff;
+            --background: #f1eee8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            color: var(--ink);
+            background: var(--background);
+            font-family: Inter, Arial, sans-serif;
+            line-height: 1.35;
+        }
+
+        .page {
+            max-width: 1240px;
+            margin: 32px auto;
+            padding: 48px 50px 42px;
+            background: var(--paper);
+            box-shadow: 0 18px 55px rgba(59, 43, 27, .13);
+        }
+
+        .top {
+            display: grid;
+            grid-template-columns: 1fr 210px;
+            gap: 34px;
+            align-items: start;
+        }
+
+        h1,
+        h2 {
+            margin: 0;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 400;
+            color: #161616;
+        }
+
+        h1 {
+            font-size: clamp(2.4rem, 5vw, 4.3rem);
+            letter-spacing: .02em;
+        }
+
+        .subtitle {
+            margin: 5px 0 13px;
+            color: var(--wine);
+            font-size: 1.45rem;
+            font-weight: 700;
+        }
+
+        .contacts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 34px;
+            color: var(--muted);
+            font-size: .95rem;
+        }
+
+        .contacts a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .contacts a:hover {
+            color: var(--wine);
+        }
+
+        .contact-icon {
+            color: var(--wine);
+            font-weight: 700;
+            margin-right: 7px;
+        }
+
+        .contact-icon svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+            vertical-align: -3px;
+        }
+
+        .portrait {
+            width: 190px;
+            height: 190px;
+            justify-self: end;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #d8e3e7;
+            border: 7px solid white;
+            box-shadow: 0 0 0 1px #e4e4e4;
+        }
+
+        .portrait-placeholder {
+            display: grid;
+            place-items: center;
+            color: white;
+            font: 500 3.5rem 'Playfair Display', Georgia, serif;
+            background: linear-gradient(145deg, #b8cbd0, #657c83);
+        }
+
+        .columns {
+            display: grid;
+            grid-template-columns: minmax(0, 1.55fr) minmax(290px, 1fr);
+            gap: 74px;
+            margin-top: 32px;
+        }
+
+        .section {
+            margin: 0 0 27px;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            line-height: 1.05;
+            border-bottom: 5px solid var(--gold);
+            padding-bottom: 7px;
+            margin-bottom: 16px;
+        }
+
+        .intro {
+            font-size: 1.15rem;
+            color: var(--muted);
+            max-width: 700px;
+        }
+
+        .role {
+            padding: 0 0 22px;
+            margin-bottom: 18px;
+            border-bottom: 1px dashed var(--line);
+        }
+
+        .role:last-child {
+            border-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .role h3,
+        .education h3 {
+            margin: 0;
+            font-size: 1.35rem;
+            font-weight: 500;
+        }
+
+        .date,
+        .accent {
+            color: var(--wine);
+            font-weight: 700;
+        }
+
+        .meta {
+            color: var(--muted);
+            margin: 4px 0 8px;
+        }
+
+        ul {
+            margin: 8px 0 0;
+            padding-left: 23px;
+            color: var(--muted);
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        .quote {
+            color: var(--wine);
+            font: italic 600 1.35rem/1.28 Georgia, serif;
+            margin: 0;
+        }
+
+        .pride {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .pride li {
+            display: grid;
+            grid-template-columns: 43px 1fr;
+            gap: 9px;
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--line);
+            margin: 0;
+        }
+
+        .pride strong {
+            display: block;
+            color: var(--ink);
+        }
+
+        .pride span {
+            color: var(--muted);
+        }
+
+        .pride .symbol {
+            color: var(--wine);
+            font-size: 1.7rem;
+            line-height: 1;
+            text-align: center;
+        }
+
+        .pride .symbol svg {
+            width: 27px;
+            height: 27px;
+            fill: currentColor;
+            vertical-align: middle;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            border: 1px solid #ccc;
+            border-radius: 9px;
+            padding: 4px 10px;
+            color: var(--muted);
+        }
+
+        .education {
+            margin-bottom: 20px;
+        }
+
+        .education h3 {
+            line-height: 1.2;
+        }
+
+        .education .institution {
+            color: var(--wine);
+            font-weight: 700;
+        }
+
+        .education p {
+            margin: 7px 0 0;
+            color: var(--muted);
+        }
+
+        .schedule {
+            display: grid;
+            grid-template-columns: 190px 1fr;
+            gap: 22px;
+            align-items: center;
+        }
+
+        .schedule-chart {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: conic-gradient(#b86266 0 33.33%, #8d171c 33.33% 41.66%, #e3c8c9 41.66% 58.33%, #d99fa1 58.33% 79.16%, #dfc4c5 79.16% 100%);
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .schedule-chart::after {
+            content: '24\A часа';
+            white-space: pre;
+            position: absolute;
+            inset: 45px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: white;
+            color: var(--ink);
+            font-size: 1rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .time-list {
+            display: grid;
+            gap: 9px;
+        }
+
+        .time-item {
+            display: grid;
+            grid-template-columns: 12px 1fr auto;
+            gap: 8px;
+            align-items: center;
+            color: var(--muted);
+            font-size: .86rem;
+        }
+
+        .time-item i {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .time-item strong {
+            color: var(--ink);
+            font-weight: 500;
+        }
+
+        .time-item span {
+            color: var(--wine);
+            font-weight: 700;
+        }
+
+        .time-bar {
+            grid-column: 2 / -1;
+            height: 4px;
+            margin-top: -5px;
+            background: #eee;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .time-bar b {
+            display: block;
+            height: 100%;
+            border-radius: inherit;
+        }
+
+        .cta {
+            color: var(--wine);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        @media (max-width: 800px) {
+            .page {
+                margin: 0;
+                padding: 28px 22px;
+            }
+
+            .top {
+                grid-template-columns: 1fr;
+            }
+
+            .portrait {
+                justify-self: start;
+                width: 140px;
+                height: 140px;
+                order: -1;
+            }
+
+            .columns {
+                grid-template-columns: 1fr;
+                gap: 0;
+                margin-top: 25px;
+            }
+
+            .intro {
+                font-size: 1rem;
+            }
+
+            h1 {
+                font-size: 2.8rem;
+            }
+
+            .subtitle {
+                font-size: 1.15rem;
+            }
+
+            .section h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .page {
+                margin: 0;
+                box-shadow: none;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="page">
+        <header class="top">
+            <div>
+                <h1>БОМБИН БОГДАН</h1>
+                <p class="subtitle">Репетитор по физике и математике</p>
+                <nav class="contacts" aria-label="Контакты">
+                    <a href="tel:+79779535636"><span class="contact-icon">☎</span>8(977)953-56-36</a>
+                    <a href="https://t.me/baogdabe" target="_blank" rel="noreferrer"><span class="contact-icon"
+                            aria-label="Telegram"><svg viewBox="0 0 24 24" role="img">
+                                <path
+                                    d="M21.5 3.5 18.2 20c-.25 1.17-.9 1.46-1.82.91l-5.02-3.7-2.42 2.33c-.27.27-.5.5-1.02.5l.36-5.12 9.32-8.42c.41-.36-.09-.56-.64-.2L5.43 13.25.45 11.7c-1.08-.34-1.1-1.08.23-1.6L20.16 2.6c.9-.33 1.69.2 1.34.9Z">
+                                </path>
+                            </svg></span>@baogdabe</a>
+                    <a href="https://vk.com/baogdab" target="_blank" rel="noreferrer"><span
+                            class="contact-icon">VK</span>@baogdab</a>
+                </nav>
+            </div>
+            <img class="portrait" src="Me1.jpg" alt="Богдан Бомбин">
+        </header>
+
+        <div class="columns">
+            <div>
+                <section class="section">
+                    <p class="intro">Привет! Меня зовут Богдан и я репетитор по физике и математике для школьников и
+                        студентов. Я стремлюсь не просто подтянуть оценки по предмету, а помочь разобраться в том, как
+                        устроен наш мир с точки зрения физики и как можно это описать с помощью математики. Стараюсь
+                        сделать решение задач по этим дисциплинам легким и ясным. Помогаю не только достичь учебных
+                        целей, но и поверить в свои силы.</p>
+                </section>
+
+                <section class="section">
+                    <h2>ОПЫТ</h2>
+                    <article class="role">
+                        <h3>Репетитор по математике и физике</h3>
+                        <div class="date">2023 – ...</div>
+                        <div class="meta">● &nbsp;Москва, метро Прокшино</div>
+                        <ul>
+                            <li>Школьная и вузовская математика: 6 класс – 2 курс университета</li>
+                            <li>Школьная и вузовская физика: 6 класс – любой курс университета</li>
+                        </ul>
+                    </article>
+                    <article class="role">
+                        <h3>Групповод первокурсников</h3>
+                        <div class="date">2023, 2025</div>
+                        <ul>
+                            <li>Взаимодействие с первокурсниками</li>
+                            <li>Помощь в адаптации в вузовской среде</li>
+                            <li>Разбор тем математического анализа и физики первых курсов</li>
+                        </ul>
+                    </article>
+                </section>
+
+                <section class="section">
+                    <h2>ЗАНЯТИЯ</h2>
+                    <h3>Математика / Физика</h3>
+                    <div class="accent">2500 руб/час (онлайн)</div>
+                    <div class="meta">▣ &nbsp;1–2 занятия в неделю</div>
+                    <ul>
+                        <li>Осталось 3 места</li>
+                        <li>Гибкое расписание занятий</li>
+                        <li>Возможно проводить офлайн занятия по договоренности</li>
+                        <li>Домашнее задание по теме занятия</li>
+                        <li>Разбор тем ЕГЭ, ОГЭ, вузовских программ</li>
+                        <li>Акцент не на заучивании формул, а на понимании</li>
+                        <li>Подготовка к олимпиадам</li>
+                    </ul>
+                </section>
+
+                <section class="section">
+                    <h2>A DAY OF MY LIFE</h2>
+                    <div class="schedule">
+                        <div class="schedule-chart"
+                            aria-label="Сон 7 часов, репетиторство 6 часов, учеба и работа 6 часов, спорт 2 часа, время с близкими 4 часа">
+                        </div>
+                        <div class="time-list">
+                            <div class="time-item"><i style="background:#b86266"></i><strong>Сон</strong><span>7
+                                    ч</span></div>
+                            <div class="time-bar"><b style="width:100%;background:#b86266"></b></div>
+                            <div class="time-item"><i
+                                    style="background:#dfc4c5"></i><strong>Репетиторство</strong><span>6 ч</span></div>
+                            <div class="time-bar"><b style="width:75%;background:#dfc4c5"></b></div>
+                            <div class="time-item"><i style="background:#d99fa1"></i><strong>Учеба и
+                                    работа в лаборатории</strong><span>5 ч</span></div>
+                            <div class="time-bar"><b style="width:63%;background:#d99fa1"></b></div>
+                            <div class="time-item"><i style="background:#e3c8c9"></i><strong>Время с
+                                    близкими</strong><span>4 ч</span></div>
+                            <div class="time-bar"><b style="width:50%;background:#e3c8c9"></b></div>
+                            <div class="time-item"><i style="background:#8d171c"></i><strong>Спорт</strong><span>2
+                                    ч</span></div>
+                            <div class="time-bar"><b style="width:25%;background:#8d171c"></b></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <aside>
+                <section class="section">
+                    <h2>ФИЛОСОФИЯ</h2>
+                    <p class="quote">“Зажечь искру интереса важнее, чем просто наполнить сосуд фактами”</p>
+                </section>
+                <section class="section">
+                    <h2>ГОРЖУСЬ</h2>
+                    <ul class="pride">
+                        <li><span class="symbol">★</span><span><strong>Своими учениками</strong>И их достижениями</span>
+                        </li>
+                        <li><span class="symbol" aria-label="Кубок"><svg viewBox="0 0 32 32" role="img">
+                                    <path
+                                        d="M8 4h16v7a8 8 0 0 1-6 7.75V23h4a2 2 0 0 1 2 2v2H8v-2a2 2 0 0 1 2-2h4v-4.25A8 8 0 0 1 8 11V4Zm3 3v4a5 5 0 0 0 5 5 5 5 0 0 0 5-5V7H11Z">
+                                    </path>
+                                    <path d="M24 7h3v6a3 3 0 0 1-3 3h-2v-3h2V7Z" transform="translate(32 0) scale(-1 1)"
+                                        fill="currentColor"
+                                        stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="1.5"></path>
+                                    <path d="M24 7h3v6a3 3 0 0 1-3 3h-2v-3h2V7Z" fill="currentColor"
+                                        stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="1.5"></path>
+                                </svg></span><span><strong>Отличными результатами</strong>В учебе и научной
+                                деятельности</span></li>
+                        <li><span class="symbol">♥</span><span><strong>Спортом</strong>Обожаю бег и волейбол</span></li>
+                    </ul>
+                </section>
+                <section class="section">
+                    <h2>ОБРАЩАЮ<br>ВНИМАНИЕ НА</h2>
+                    <div class="tags"><span class="tag">Домашние задания</span><span class="tag">Экзамены</span><span
+                            class="tag">Олимпиады</span><span class="tag">Школьную отчетность</span><span
+                            class="tag">Внимательность</span><span class="tag">Цели в учебе</span><span
+                            class="tag">Заинтересованность</span></div>
+                </section>
+                <section class="section">
+                    <h2>ОБРАЗОВАНИЕ</h2>
+                    <article class="education">
+                        <h3>Физический факультет<br><span class="institution">МГУ им. М.В. Ломоносова</span></h3>
+                        <p>▣ &nbsp;2022 – 2028</p>
+                        <p>Прикладная и теоретическая физика</p>
+                    </article>
+                    <article class="education">
+                        <h3>Кафедра общей ядерной физики<br><span class="institution">НИИЯФ МГУ</span></h3>
+                        <p>▣ &nbsp;2024 – 2028</p>
+                        <p>Физика атомного ядра и частиц</p>
+                    </article>
+                    <article class="education">
+                        <h3>Лаборатория физики высоких энергий<br><span class="institution">ИЯИ РАН</span></h3>
+                        <p>▣ &nbsp;2023 – ... &nbsp;&nbsp; ● &nbsp;Троицк</p>
+                    </article>
+                </section>
+            </aside>
+        </div>
+    </main>
+</body>
+
+</html>
